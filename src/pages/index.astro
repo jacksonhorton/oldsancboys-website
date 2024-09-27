@@ -1,4 +1,8 @@
 ---
+import "../styles/tailwind.css";
+
+import ComingSoonComponent from "../components/ComingSoon.svelte";
+
 import { Image, getImage } from "astro:assets";
 import square_logo from "../../src/images/square-logo.png";
 import sidewalk from "../../src/images/pyr-polaroid-trans.png";
@@ -16,16 +20,22 @@ const optimizedBgImage = await getImage({ src: bgImage });
 		<title>Astro</title>
 	</head>
 	<!-- <body style={`background-image: url(${optimizedBgImage.src}); background-size: cover; background-position: center; background-repeat: no-repeat;`}> -->
-	<body>
-		<Image
-			src={square_logo}
-			alt="OSB logo"
-			height="100"
-			width="100"
-			style="background: black; border-radius: 20px;"
-		/>
-		<div style="display: flex; justify-content: center">
+
+	<body class="bg-black">
+		<header class="bg-black">
+			<Image
+				src={square_logo}
+				alt="OSB logo"
+				height="100"
+				width="100"
+				style="background: black; border-radius: 20px;"
+			/>
+		</header>
+		<!-- <div style="display: flex; justify-content: center">
 			<Image src={sidewalk} alt="" style="width=40%;" />
+		</div> -->
+		<div class="flex pt-24 md:pt-44 lg:pt-80 justify-center h-screen">
+			<ComingSoonComponent />
 		</div>
 	</body>
 </html>
