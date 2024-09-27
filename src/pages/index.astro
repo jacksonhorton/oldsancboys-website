@@ -1,6 +1,10 @@
 ---
-import { Image } from "astro:assets";
-import sidewalk from "../../src/images/sidewalk.jpg";
+import { Image, getImage } from "astro:assets";
+import square_logo from "../../src/images/square-logo.png";
+import sidewalk from "../../src/images/pyr-polaroid-trans.png";
+import bgImage from "../../src/images/off-white-bg.jpeg";
+
+const optimizedBgImage = await getImage({ src: bgImage });
 ---
 
 <html lang="en">
@@ -11,8 +15,17 @@ import sidewalk from "../../src/images/sidewalk.jpg";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
+	<!-- <body style={`background-image: url(${optimizedBgImage.src}); background-size: cover; background-position: center; background-repeat: no-repeat;`}> -->
 	<body>
-		<h1>Astro</h1>
-		<Image src={sidewalk} alt="A bird."/>
+		<Image
+			src={square_logo}
+			alt="OSB logo"
+			height="100"
+			width="100"
+			style="background: black; border-radius: 20px;"
+		/>
+		<div style="display: flex; justify-content: center">
+			<Image src={sidewalk} alt="" style="width=40%;" />
+		</div>
 	</body>
 </html>
