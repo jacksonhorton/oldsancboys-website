@@ -1,41 +1,61 @@
 ---
-import "../styles/tailwind.css";
+import PageLayout from "../layouts/PageLayout.astro";
 
-import ComingSoonComponent from "../components/ComingSoon.svelte";
+import { Blockquote, Heading } from "flowbite-svelte";
+import { QuoteSolid } from "flowbite-svelte-icons";
 
-import { Image, getImage } from "astro:assets";
-import square_logo from "../../src/images/OSB-trans.png";
-import sidewalk from "../../src/images/pyr-polaroid-trans.png";
-import bgImage from "../../src/images/off-white-bg.jpeg";
+import { Image } from "astro:assets";
+import pyrImage from "../images/OSB-pyr-trans-custom.png";
 
-const optimizedBgImage = await getImage({ src: bgImage });
+const pageTitle = "";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" type="image/png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<!-- <body style={`background-image: url(${optimizedBgImage.src}); background-size: cover; background-position: center; background-repeat: no-repeat;`}> -->
-
-	<body class="bg-black">
-		<header class="bg-black">
-			<Image
-				src={square_logo}
-				alt="OSB logo"
-				height="100"
-				width="100"
-				style="background: black; border-radius: 20px; margin: 15px"
-			/>
-		</header>
-		<!-- <div style="display: flex; justify-content: center">
-			<Image src={sidewalk} alt="" style="width=40%;" />
-		</div> -->
-		<div class="flex pt-24 md:pt-44 lg:pt-80 justify-center h-screen">
-			<ComingSoonComponent />
+<PageLayout title={pageTitle}>
+	<div class="w-full relative">
+		<Image
+			class="max-h-svh w-auto max-w-sm md:max-w-2xl lg:max-w-4xl mx-auto"
+			src={pyrImage}
+			alt="Picture of the old sanc boys with their instruments looking really, really cool."
+		/>
+		<div
+			class="-translate-x-1/2 -translate-y-1/2 absolute top-2/3 left-1/2 w-full text-center"
+		>
+			<Heading
+				tag="h1"
+				class="mb-4 text-white spac"
+				customSize="text-4xl md:text-8xl font-extrabold tracking-widest"
+			>
+				<span style="text-shadow: 0 0 10px rgb(149, 148, 166);"
+					>Old Sanc Boys</span
+				>
+			</Heading>
 		</div>
-	</body>
-</html>
+	</div>
+
+	<div class="flex items-center justify-center content-center w-full">
+		<figure class="mt-8 mx-auto max-w-screen-md text-center">
+			<QuoteSolid
+				class="mx-auto mb-3 w-12 h-12 text-gray-400 dark:text-gray-600"
+			/>
+			<Blockquote alignment="center" size="2xl"
+				>"The joke gone too far."</Blockquote
+			>
+			<figcaption
+				class="flex justify-center items-center mt-6 space-x-3 rtl:space-x-reverse"
+			>
+				<!-- <img
+				class="w-6 h-6 rounded-full"
+				src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+				alt="Micheal Gough profile"
+			/> -->
+				<div
+					class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700"
+				>
+					<cite class="pe-3 font-medium text-gray-900 dark:text-white"
+						>Josh Scott</cite
+					>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+</PageLayout>

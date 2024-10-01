@@ -8,7 +8,7 @@ const pageTitle = "Music";
 
 let bottomPaddingCSS = "lg:pb-20 md:pb-16 pb-12";
 const albums = [
-    { title: "Thrive", imageSrc: thriveCover.src, href: "https://google.com" },
+    { title: "Thrive", imageSrc: thriveCover.src, href: "https://google.com", releaseDate: "October 2024" },
 ];
 ---
 
@@ -16,11 +16,12 @@ const albums = [
     <div class="w-full">
         {
             albums.map((item, index) => (
-                <div class=`${index!=albums.length-1 && bottomPaddingCSS} w-10/12 md:w-2/5 lg:w-2/5 mx-auto flex justify-center items-center flex-col max-w-lg`>
+                <div class=`${index!=albums.length-1 && bottomPaddingCSS} w-10/12 md:w-2/5 lg:w-2/5 mx-auto flex justify-center items-center flex-col md:max-w-lg max-w-sm`>
                     <AlbumCover
                         albumTitle={item.title}
                         imageSrc={item.imageSrc}
                         href={item.href}
+                        releaseDate={item.releaseDate}
                         client:load
                     />
                 </div>
