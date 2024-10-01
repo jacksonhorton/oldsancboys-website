@@ -1,0 +1,38 @@
+---
+import { A, P } from "flowbite-svelte";
+import {
+    ArrowRightOutline,
+    InstagramSolid,
+    EnvelopeOutline,
+} from "flowbite-svelte-icons";
+import PageLayout from "../layouts/PageLayout.astro";
+const pageTitle = "Contact";
+---
+
+<PageLayout title={pageTitle}>
+    <div class="h-full w-full flex flex-col items-center pt-12">
+        <P weight="semibold" space="widest">
+            DM us on
+            <A
+                href="https://www.instagram.com/oldsancboys"
+                textColor="text-primary-600 dark:text-primary-500"
+                aClass="inline-flex items-center font-medium  hover:underline pr-16"
+            >
+                Instagram
+                <InstagramSolid class="w-6 h-6 ms-2" />
+            </A>
+        </P>
+        <P weight="semibold" space="widest">
+            <span class="pl-16"></span>
+            or send us an
+            <A
+                href="mailto:info@oldsancboys.com"
+                textColor="text-primary-600 dark:text-primary-500"
+                aClass="inline-flex items-center font-medium  hover:underline"
+            >
+                email
+                <EnvelopeOutline class="w-6 h-6 ms-2" />
+            </A>
+        </P>
+    </div>
+</PageLayout>
