@@ -20,7 +20,7 @@ const activeUrl = Astro.url.pathname;
       <NavBar client:load activeUrl={activeUrl} pageTitle={title} />
 
       {title!="" &&      
-      <Heading tag="h1" class="md:hidden flex items-center justify-center pt-10 pb-16" size="text-4xl">
+      <Heading tag="h1" class="tracking-wider md:hidden flex items-center justify-center pt-10 pb-16" size="text-4xl">
         {title}
       </Heading>
       }
