@@ -1,4 +1,8 @@
 ---
+export interface Props {
+  title: string;
+}
+
 import BaseHead from "../components/BaseHead.astro";
 import NavBar from "../components/NavBar.svelte";
 import Footer from "../components/Footer.svelte";
@@ -11,7 +15,6 @@ const activeUrl = Astro.url.pathname;
 import { getImage } from "astro:assets";
 
 import osbNavLogoSrc from "../images/osb-inv-trans.png";
-// const optimizedImageSrc = "../images/osb-inv-trans.png";
 const optimizedImageSrc = await getImage({
   src: osbNavLogoSrc,
   width: 420,

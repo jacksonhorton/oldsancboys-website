@@ -1,4 +1,4 @@
-<script type="ts">
+<script>
     import { Img, Secondary, Heading } from "flowbite-svelte";
 
     export let imageSrc;
