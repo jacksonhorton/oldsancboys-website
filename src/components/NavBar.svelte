@@ -5,7 +5,8 @@
     export let activeUrl = '/';
     export let pageTitle = "";
     export let badgeColor = "green";
-    
+    export let imageUrl;
+
     let menuSlideParams = {
         delay: 50,
         duration:400,
@@ -19,7 +20,7 @@
 
 <Navbar>
     <NavBrand href="/">
-        <img src="../OSB-inv-trans.png" class="me-3 h-14 sm:h-16 px-2" alt="Old Sanc Boys Logo" />
+        <img src={imageUrl.src} loading="lazy" class="me-3 h-14 w-17 px-2" alt="Old Sanc Boys Logo" />
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
             <Heading tag="h1" class="font-sans md:flex hidden items-center" size="text-sm">
                 Old Sanc Boys

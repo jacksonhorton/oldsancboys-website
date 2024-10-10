@@ -7,6 +7,17 @@ import { Heading, Badge } from "flowbite-svelte";
 
 const { title } = Astro.props;
 const activeUrl = Astro.url.pathname;
+
+import { getImage } from "astro:assets";
+
+import osbNavLogoSrc from "../images/osb-inv-trans.png";
+// const optimizedImageSrc = "../images/osb-inv-trans.png";
+const optimizedImageSrc = await getImage({
+  src: osbNavLogoSrc,
+  width: 420,
+  height: 400,
+  format: "webp",
+});
 ---
 
 <html lang="en">
@@ -17,18 +28,25 @@ const activeUrl = Astro.url.pathname;
   </head>
   <body class="flex flex-col min-h-screen">
     <main class="flex-1">
-      <NavBar client:load activeUrl={activeUrl} pageTitle={title} />
+      <NavBar
+        client:idle
+        activeUrl={activeUrl}
+        pageTitle={title}
+        imageUrl={optimizedImageSrc}
+      />
 
-      {title!="" &&      
-      <Heading tag="h1" class="md:hidden flex items-center justify-center pt-10 pb-16" size="text-4xl">
-        {title}
-      </Heading>
+      {
+        title != "" && (
+          <Heading
+            tag="h1"
+            class="tracking-wider md:hidden flex items-center justify-center pt-10 pb-16"
+            size="text-4xl"
+          >
+            {title}
+          </Heading>
+        )
       }
-      {title=="" && 
-        <div class="py-5">
-
-        </div>
-      }
+      {title == "" && <div class="py-5" />}
 
       <div class="h-14 md:h-24 lg:h-28 md:block hidden"></div>
 
