@@ -4,18 +4,26 @@ import PageLayout from "../layouts/PageLayout.astro";
 import {
 	Blockquote,
 	Heading,
-	Timeline,
-	TimelineItem,
 	Hr,
 	Carousel,
 } from "flowbite-svelte";
 import { QuoteSolid } from "flowbite-svelte-icons";
 
-import { Image } from "astro:assets";
+import { Image, getImage, imageConfig } from "astro:assets";
 import pyrImage from "../images/OSB-pyr-trans-custom.png";
 
-import camp24Image from "../images/carousel-images/camp24.JPEG";
-const images = [{ src: camp24Image.src }];
+import camp24Image from "../images/carousel-images/camp24.jpg";
+let carouselImages: { src: string }[] = [];
+const preoptimizedImageSrcs = [camp24Image];
+preoptimizedImageSrcs.forEach(async (imageSrc) => {
+	let optimizedImage = await getImage({
+		src: imageSrc,
+		width: imageSrc.width,
+		height: imageSrc.height,
+		format: "webp",
+	});
+	carouselImages.push({ src: optimizedImage.src });
+});
 
 const pageTitle = "";
 ---
@@ -25,8 +33,13 @@ const pageTitle = "";
 		<Image
 			class="max-h-svh w-auto max-w-sm md:max-w-2xl lg:max-w-4xl mx-auto"
 			src={pyrImage}
+			width={pyrImage.width / 2}
+			height={pyrImage.height / 2}
 			alt="Picture of the old sanc boys with their instruments looking really, really cool."
-		/>
+			loading="lazy"
+		>
+			<div class="fallback"> waiting</div>
+		</Image>
 		<div
 			class="-translate-x-1/2 -translate-y-1/2 absolute top-2/3 left-1/2 w-full text-center"
 		>
@@ -42,7 +55,7 @@ const pageTitle = "";
 		</div>
 	</div>
 
-	<div class="flex items-center justify-center content-center w-full">
+	<div class="flex items-center justify-center content-center w-full mt-14">
 		<figure class="mt-8 mx-auto max-w-screen-md text-center">
 			<QuoteSolid
 				class="mx-auto mb-3 w-12 h-12 text-gray-400 dark:text-gray-600"
@@ -65,17 +78,11 @@ const pageTitle = "";
 		</figure>
 	</div>
 
-	<Hr hrClass="w-64 h-1 mx-auto my-4 rounded md:my-10" />
-
+	<Hr hrClass="w-64 h-1 mx-auto my-14 rounded md:my-10" />
 
 	<div class="flex justify-center mt-10">
 		<div class="w-screen mx-5 lg:max-w-7xl md:max-w-4xl max-w-xl">
-			{
-				(
-					<Carousel client:load {images} duration={4500} >
-					</Carousel>
-				)
-			}
+			<Carousel client:idle images={carouselImages} duration={4500} />
 		</div>
 	</div>
 

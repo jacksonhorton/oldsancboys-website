@@ -8,15 +8,18 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clean": "rm -rf .astro; rm -rf node_modules/.cache; rm -rf dist; npm clean-install"
   },
   "dependencies": {
     "@astrojs/svelte": "^5.7.1",
     "@astrojs/tailwind": "^5.1.1",
     "astro": "^4.15.9",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "svelte-boxicons": "^1.0.4"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.2.0",
     "autoprefixer": "^10.4.20",
     "flowbite": "^2.5.2",
     "flowbite-svelte": "^0.46.19",

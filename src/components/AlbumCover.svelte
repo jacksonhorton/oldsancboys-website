@@ -1,13 +1,24 @@
-<script>
+<script type="ts">
     import { Img, Secondary, Heading } from "flowbite-svelte";
 
     export let imageSrc;
     export let albumTitle = "";
-    export let href = "";
     export let releaseDate;
+    export let albumIndex;
+
+
+    // for handling clicking on album event
+    import { createEventDispatcher } from "svelte";
+
+    const dispatch = createEventDispatcher();
+
+    function handleClick() {
+        console.log("clicked in component")
+        dispatch('coverClicked', { albumIndex: albumIndex});
+    }
 </script>
 
-<a href={href} class="block">
+<button on:click={handleClick} class="block">
     <Img
         src={imageSrc}
         alt="{albumTitle} Album Cover"
@@ -20,4 +31,4 @@
             <Secondary class="text-md">{releaseDate}</Secondary>
         {/if}
     </Heading>
-</a>
+</button>

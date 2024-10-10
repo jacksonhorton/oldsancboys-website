@@ -3,7 +3,13 @@ import tailwind from '@astrojs/tailwind';
 import svelte from '@astrojs/svelte';
 
 
+
 export default defineConfig({
   site: 'https://oldsancboys.com',
   integrations: [tailwind(), svelte()],
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    },
+  },
 });
