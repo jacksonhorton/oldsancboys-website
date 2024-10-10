@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import { BxlSpotify, BxlApple } from 'svelte-boxicons';
     import AlbumCover from "../components/AlbumCover.svelte";
     import { Button, Modal } from "flowbite-svelte";
