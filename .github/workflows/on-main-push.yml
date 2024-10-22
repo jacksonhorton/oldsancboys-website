@@ -1,0 +1,16 @@
+name: Cloudflare Build On Push to Main
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  send-webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send webhook
+        run: |
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/220c93be-fe61-40c6-9f48-e6e0a33b7580" \
+          -H "Content-Type: application/json" \
+          -d '{"ref": "${{ github.ref }}", "merge_commit_sha": "${{ github.sha }}"}'
