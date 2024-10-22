@@ -38,7 +38,7 @@
             title: "Thrive",
             imageSrc: thriveCover.src,
             hrefAppleMusic: "",
-            hrefSpotify: "",
+            hrefSpotify: "https://open.spotify.com/album/4flwcovD7i3jSmgVSN8QYS?si=5Hed4jThRviQBH4W5s_b8A",
             releaseDate: "October 2024",
         },
     ];
