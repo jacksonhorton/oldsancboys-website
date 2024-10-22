@@ -1,11 +1,12 @@
 ---
 import "../styles/tailwind.css";
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
-<title>{title ? title + " | OSB" : "OSB"}</title>
-<meta name="description" content="Old Sanc Boys" />
-<meta name="keywords" content="" />
+<title>{title ? title + " | Old Sanc Boys" : "Old Sanc Boys"}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="keywords" content="old sanc boys oldsancboys osb" />
 <!-- <link rel="stylesheet" href="../styles/tailwind.css" /> -->
 <link rel="icon" href="/favicon.png" />

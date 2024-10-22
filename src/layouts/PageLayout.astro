@@ -1,6 +1,7 @@
 ---
 export interface Props {
   title: string;
+  description?: string;
 }
 
 import BaseHead from "../components/BaseHead.astro";
@@ -9,7 +10,7 @@ import Footer from "../components/Footer.svelte";
 
 import { Heading, Badge } from "flowbite-svelte";
 
-const { title } = Astro.props;
+const { title, description="Old Sanc Boys" } = Astro.props;
 const activeUrl = Astro.url.pathname;
 
 import { getImage } from "astro:assets";
@@ -27,7 +28,7 @@ const optimizedImageSrc = await getImage({
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <BaseHead title={title} />
+    <BaseHead title={title} description={description} />
   </head>
   <body class="flex flex-col min-h-screen">
     <main class="flex-1">
