@@ -1,0 +1,26 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import { Heading, Span, A } from "flowbite-svelte";
+const pageTitle = "";
+---
+
+<PageLayout title={pageTitle}>
+    <div class="text-center md:pt-24 sm:pt-14">
+        <Heading
+            tag="h1"
+            class="mb-4 tracking-wider"
+            customSize="text-3xl font-extrabold md:text-5xl lg:text-6xl"
+        >
+            <Span
+                class="font-black bg-gradient-to-r from-slate-500 via-green-500 to-red-500 bg-clip-text text-transparent text-8xl"
+            >
+                404
+            </Span>
+            <br />
+            Page Not Found
+        </Heading>
+        <div>
+            <A href="/" class="font-medium tracking-wider text-lg text-red-500 hover:underline lg:pt-20 md:pt-18 pt-4">Go home</A>
+        </div>
+    </div>
+</PageLayout>
