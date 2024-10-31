@@ -8,8 +8,10 @@ import { Image, getImage, imageConfig } from "astro:assets";
 import pyrImage from "../images/OSB-pyr-trans-custom.png";
 
 import camp24Image from "../images/carousel-images/camp24.jpg";
+import fofClinton1Image from "../images/carousel-images/fof-clinton1.jpg";
+import fofClinton2Image from "../images/carousel-images/fof-clinton2.jpg";
 let carouselImages: { src: string }[] = [];
-const preoptimizedImageSrcs = [camp24Image];
+const preoptimizedImageSrcs = [fofClinton1Image, camp24Image, fofClinton2Image];
 await Promise.all(
 	preoptimizedImageSrcs.map(async (imageSrc, index) => {
 		let optimizedImage = await getImage({
@@ -25,7 +27,10 @@ await Promise.all(
 const pageTitle = "";
 ---
 
-<PageLayout title={pageTitle} description="Home of the Old Sanc Boys! Check out some pics, music, and how to get in contact with us.">
+<PageLayout
+	title={pageTitle}
+	description="Home of the Old Sanc Boys! Check out some pics, music, and how to get in contact with us."
+>
 	<div class="w-full relative">
 		<Image
 			class="max-h-svh w-auto max-w-sm md:max-w-2xl lg:max-w-4xl mx-auto"
@@ -78,7 +83,8 @@ const pageTitle = "";
 	<Hr hrClass="w-64 h-1 mx-auto my-14 rounded md:my-10" />
 
 	<div class="flex justify-center mt-10">
-		<div class="w-screen mx-5 lg:max-w-7xl md:max-w-4xl max-w-xl">
+		<!-- <div class="w-screen mx-5 lg:max-w-7xl md:max-w-4xl max-w-xl"> -->
+		<div class="mx-5 w-screen lg:max-w-2xl md:max-w-xl max-w-xl">
 			<Carousel client:idle images={carouselImages} duration={4500} />
 		</div>
 	</div>
