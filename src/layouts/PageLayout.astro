@@ -7,10 +7,11 @@ export interface Props {
 import BaseHead from "../components/BaseHead.astro";
 import NavBar from "../components/NavBar.svelte";
 import Footer from "../components/Footer.svelte";
+import ParallaxBackground from "../components/ParallaxBackground.svelte";
 
 import { Heading, Badge } from "flowbite-svelte";
 
-const { title, description="Old Sanc Boys" } = Astro.props;
+const { title, description = "Old Sanc Boys" } = Astro.props;
 const activeUrl = Astro.url.pathname;
 
 import { getImage } from "astro:assets";
@@ -32,6 +33,8 @@ const optimizedImageSrc = await getImage({
   </head>
   <body class="flex flex-col min-h-screen">
     <main class="flex-1">
+      <ParallaxBackground client:load />
+
       <NavBar
         client:idle
         activeUrl={activeUrl}
@@ -39,11 +42,15 @@ const optimizedImageSrc = await getImage({
         imageUrl={optimizedImageSrc}
       />
 
+      <div
+        class="h-10 bg-transparent bg-gradient-to-b from-white to-transparent"
+      >
+      </div>
       {
         title != "" && (
           <Heading
             tag="h1"
-            class="tracking-wider md:hidden flex items-center justify-center pt-10 pb-16"
+            class="tracking-wider md:hidden flex items-center justify-center pb-16"
             size="text-4xl"
           >
             {title}
@@ -58,8 +65,9 @@ const optimizedImageSrc = await getImage({
         <slot />
         <!-- your content is injected here -->
       </article>
+
+      <Footer />
     </main>
-    <Footer />
   </body><style>
     h1 {
       font-size: 4rem;
