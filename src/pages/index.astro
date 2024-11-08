@@ -1,5 +1,7 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import Gallery from "../components/Gallery.astro";
+import type { ImageMetadata } from "astro";
 
 import { Blockquote, Heading, Hr, Carousel } from "flowbite-svelte";
 import { QuoteSolid } from "flowbite-svelte-icons";
@@ -7,22 +9,15 @@ import { QuoteSolid } from "flowbite-svelte-icons";
 import { Image, getImage, imageConfig } from "astro:assets";
 import pyrImage from "../images/OSB-pyr-trans-custom.png";
 
-import camp24Image from "../images/carousel-images/camp24.jpg";
-import fofClinton1Image from "../images/carousel-images/fof-clinton1.jpg";
-import fofClinton2Image from "../images/carousel-images/fof-clinton2.jpg";
-let carouselImages: { src: string }[] = [];
-const preoptimizedImageSrcs = [fofClinton1Image, camp24Image, fofClinton2Image];
-await Promise.all(
-	preoptimizedImageSrcs.map(async (imageSrc, index) => {
-		let optimizedImage = await getImage({
-			src: imageSrc,
-			width: imageSrc.width,
-			height: imageSrc.height,
-			format: "webp",
-		});
-		carouselImages[index] = { src: optimizedImage.src };
-	}),
-);
+// import camp24Image from "../images/carousel/camp24.jpg";
+// import fofClinton1Image from "../images/carousel/fof-clinton1.jpg";
+// import fofClinton2Image from "../images/carousel/fof-clinton2.jpg";
+// let carouselImages: { image: ImageMetadata; name?: string }[] = [
+// 	{ image: fofClinton2Image, name: "Fields of Faith 2024 - Clinton, KY"},
+// 	{ image: camp24Image, name: "Central Baptist Summer Camp 2024" },
+// 	{ image: fofClinton1Image, name: "Fields of Faith 2024 - Clinton, KY"}
+// ];
+
 
 const pageTitle = "";
 ---
@@ -78,14 +73,16 @@ const pageTitle = "";
 		</figure>
 	</div>
 
-	<Hr hrClass="w-64 h-1 mx-auto my-14 rounded md:my-10" />
+	<Hr hrClass="w-64 h-1 mx-auto my-14 rounded" />
 
-	<div class="flex justify-center mt-10">
-		<!-- <div class="w-screen mx-5 lg:max-w-7xl md:max-w-4xl max-w-xl"> -->
+	<Gallery />
+	<div class="py-7"/>
+
+	<!-- <div class="flex justify-center mt-10">
 		<div class="mx-5 w-screen lg:max-w-2xl md:max-w-xl max-w-xl">
-			<Carousel client:idle images={carouselImages} duration={4500} />
+			<Carousel client:load images={carouselImages} duration={4500} />
 		</div>
-	</div>
+	</div> -->
 
 	<!-- <div class="w-full flex items-center content-center justify-center">
 		<Timeline class="m-auto w-10/12 max-w-lg">
