@@ -9,14 +9,14 @@ import { QuoteSolid } from "flowbite-svelte-icons";
 import { Image, getImage, imageConfig } from "astro:assets";
 import pyrImage from "../images/OSB-pyr-trans-custom.png";
 
-import camp24Image from "../images/carousel/camp24.jpg";
-import fofClinton1Image from "../images/carousel/fof-clinton1.jpg";
-import fofClinton2Image from "../images/carousel/fof-clinton2.jpg";
-let carouselImages: { image: ImageMetadata; name?: string }[] = [
-	{ image: fofClinton2Image, name: "Fields of Faith 2024 - Clinton, KY"},
-	{ image: camp24Image, name: "Central Baptist Summer Camp 2024" },
-	{ image: fofClinton1Image, name: "Fields of Faith 2024 - Clinton, KY"}
-];
+// import camp24Image from "../images/carousel/camp24.jpg";
+// import fofClinton1Image from "../images/carousel/fof-clinton1.jpg";
+// import fofClinton2Image from "../images/carousel/fof-clinton2.jpg";
+// let carouselImages: { image: ImageMetadata; name?: string }[] = [
+// 	{ image: fofClinton2Image, name: "Fields of Faith 2024 - Clinton, KY"},
+// 	{ image: camp24Image, name: "Central Baptist Summer Camp 2024" },
+// 	{ image: fofClinton1Image, name: "Fields of Faith 2024 - Clinton, KY"}
+// ];
 
 
 const pageTitle = "";
@@ -73,9 +73,10 @@ const pageTitle = "";
 		</figure>
 	</div>
 
-	<Hr hrClass="w-64 h-1 mx-auto my-14 rounded md:my-10" />
+	<Hr hrClass="w-64 h-1 mx-auto my-14 rounded" />
 
-	<Gallery images={carouselImages} client:load/>
+	<Gallery />
+	<div class="py-7"/>
 
 	<!-- <div class="flex justify-center mt-10">
 		<div class="mx-5 w-screen lg:max-w-2xl md:max-w-xl max-w-xl">

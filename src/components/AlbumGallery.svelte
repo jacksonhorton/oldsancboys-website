@@ -50,10 +50,10 @@
 
     <Modal class="w-11/12 max-w-sm md:max-w-none md:w-3/5" title="Apple Music or Spotify?" bind:open={modalOpen} autoclose outsideclose>
         <div class="flex w-full justify-around">
-            <Button on:click={() => {selectPlatform("spotify")}} color="alternative" class="bg-black p-2">
+            <Button on:click={() => {selectPlatform("spotify")}} color="alternative" class="bg-black p-2 rounded-2xl">
                 <BxlSpotify color="#1DB954" class="w-24 h-24" />
             </Button>
-            <Button on:click={() => {selectPlatform("apple")}} color="alternative" class="bg-white p-2">
+            <Button on:click={() => {selectPlatform("apple")}} color="alternative" class="bg-white p-2 rounded-2xl">
                 <BxlApple color="#FA2D48" class="w-24 h-24 " />
             </Button>
         </div>
