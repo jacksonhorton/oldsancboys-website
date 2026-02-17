@@ -18,7 +18,7 @@
 </script>
 
 
-<Navbar>
+<Navbar class="">
     <NavBrand href="/">
         <img src={imageUrl.src} loading="lazy" class="me-3 h-14 w-17 px-2" alt="Old Sanc Boys Logo" />
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
