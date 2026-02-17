@@ -8,6 +8,7 @@ import { QuoteSolid } from "flowbite-svelte-icons";
 
 import { Image, getImage, imageConfig } from "astro:assets";
 import pyrImage from "../images/OSB-pyr-trans-custom.png";
+import osbWeddingImage from "../images/an-osb-wedding.png";
 
 // import camp24Image from "../images/carousel/camp24.jpg";
 // import fofClinton1Image from "../images/carousel/fof-clinton1.jpg";
@@ -108,8 +109,20 @@ const pageTitle = "";
 				><a href="/contact">Contact us</a></span
 			>
 		</P>
+	</div>
 
-		<div class="py-7"></div>
+
+
+	<!-- <Image
+		class="rounded-lg shadow-xl my-7 mx-auto"
+		src={osbWeddingImage}
+		width={osbWeddingImage.width/2}
+		height={osbWeddingImage.height/2}
+		alt="OSB Wedding photo."
+		loading="lazy"
+	/> -->
+
+	<div class="py-14"></div>
 		<!-- <div class="flex justify-center mt-10">
 		<div class="mx-5 w-screen lg:max-w-2xl md:max-w-xl max-w-xl">
 			<Carousel client:load images={carouselImages} duration={4500} />
@@ -133,5 +146,4 @@ const pageTitle = "";
 		</Timeline>
 		<div></div>
 	</div> -->
-	</div>
 </PageLayout>
