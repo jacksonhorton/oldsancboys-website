@@ -9,14 +9,18 @@ import PageLayout from "../layouts/PageLayout.astro";
 const pageTitle = "Contact";
 ---
 
-<PageLayout title={pageTitle} description="Need to get in touch with the Old Sanc Boys? Contact us on instagram or by email.">
-    <div class="h-full w-full flex flex-col items-center pt-16 md:pt-28 lg:pt-48">
+<PageLayout
+    title={pageTitle}
+    description="Need to get in touch with the Old Sanc Boys? Contact us on instagram or by email."
+>
+    <div
+        class="h-full w-full flex flex-col items-center pt-16 md:pt-28 lg:pt-48"
+    >
         <P weight="semibold" space="widest">
             DM us on
             <A
                 href="https://www.instagram.com/oldsancboys"
-                textColor="text-primary-600 dark:text-primary-500"
-                aClass="inline-flex items-center font-medium  hover:underline pr-16"
+                aClass="inline-flex items-center font-medium  hover:underline pr-16 text-primary-600 dark:text-primary-500"
             >
                 Instagram
                 <InstagramSolid class="w-6 h-6 ms-2" />
@@ -27,8 +31,7 @@ const pageTitle = "Contact";
             or send us an
             <A
                 href="mailto:info@oldsancboys.com"
-                textColor="text-primary-600 dark:text-primary-500"
-                aClass="inline-flex items-center font-medium  hover:underline"
+                aClass="inline-flex items-center font-medium  hover:underline text-primary-600 dark:text-primary-500"
             >
                 email
                 <EnvelopeOutline class="w-6 h-6 ms-2" />
