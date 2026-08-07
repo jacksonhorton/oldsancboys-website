@@ -33,7 +33,7 @@
     <NavHamburger  />
     <NavUl {activeUrl} {activeClass} {nonActiveClass} slideParams={menuSlideParams}>
         <NavLi href="/">Home</NavLi>
-        <NavLi href="/music">Music</NavLi>
+        <!-- <NavLi href="/music">Music</NavLi> -->
         <NavLi href="/contact">Contact</NavLi>
     </NavUl>
 </Navbar>
