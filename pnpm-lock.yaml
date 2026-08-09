@@ -23,6 +23,9 @@ importers:
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
+      svelte:
+        specifier: ^4.2.20
+        version: 4.2.20
       svelte-boxicons:
         specifier: ^1.0.4
         version: 1.0.4(svelte@4.2.20)
