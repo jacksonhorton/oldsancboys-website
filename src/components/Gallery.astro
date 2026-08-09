@@ -9,12 +9,12 @@ import fofClinton2Image from "../images/carousel/fof-clinton2.jpg";
 import fofClinton3Image from "../images/carousel/fof-clinton3.jpg";
 import fofClinton4Image from "../images/carousel/fof-clinton4.jpg";
 import thriveCoverImage from "../images/Thrive.jpg";
-import projectorImage from "../images/united-projector.jpg";
-import unitedPursuitWideImage from "../images/united-wide.jpg";
-import jacksonImage from "../images/united-jackson.jpg";
-import charlesImage from "../images/united-charles.jpg";
-import joshImage from "../images/united-josh.jpg";
-import unitedPursuitImage from "../images/united-pursuit.jpg";
+import projectorImage from "../images/united-projector.webp";
+import unitedPursuitWideImage from "../images/united-wide.webp";
+import jacksonImage from "../images/united-jackson.webp";
+import charlesImage from "../images/united-charles.webp";
+import joshImage from "../images/united-josh.webp";
+import unitedPursuitImage from "../images/united-pursuit.webp";
 ---
 
 <div
@@ -30,13 +30,13 @@ import unitedPursuitImage from "../images/united-pursuit.jpg";
             alt=""
             loading="lazy"
         />
-        <div class="block w-1/6 h-auto"></div>
+        <div class="w-1/6 h-auto hidden md:block"></div>
     </div>
     <div
         class="flex flex-row justify-center space-x-8 md:space-x-12 items-center"
     >
         <Image
-            class="w-5/12 self-end mb-24 rounded-lg shadow-xl"
+            class="w-5/12 self-end mb-12 md:mb-24 rounded-lg shadow-xl"
             src={unitedPursuitImage}
             width={unitedPursuitImage.width}
             height={unitedPursuitImage.height}
@@ -44,7 +44,7 @@ import unitedPursuitImage from "../images/united-pursuit.jpg";
             loading="lazy"
         />
         <Image
-            class="w-2/5 h-2/5 md:w-1/3 md:h-3/12 self-end -mb-6 rounded-lg shadow-xl"
+            class="w-2/5 h-2/5 md:w-1/3 md:h-3/12 self-end -mb-6 rounded-lg shadow-xl hidden md:block"
             src={projectorImage}
             width={projectorImage.width}
             height={projectorImage.height}
