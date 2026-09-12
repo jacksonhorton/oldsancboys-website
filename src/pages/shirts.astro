@@ -1,0 +1,27 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const pageTitle = "Shirts";
+const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSckCO5z2ONTEiCyKzwTw9boIaB0QZGx876yUdSNcaNTZWFXFA/viewform?embedded=true";
+---
+
+<PageLayout
+	title={pageTitle}
+	description="Order Old Sanc Boys shirts through the official shirt form."
+>
+	<section class="w-full px-2 pb-8 md:px-6">
+		<div class="mx-auto w-full max-w-5xl">
+			<iframe
+				src={formUrl}
+				title="Old Sanc Boys shirt order form"
+				class="h-[calc(100vh-12rem)] min-h-[720px] w-full border-0 bg-transparent md:h-[calc(100vh-14rem)]"
+				loading="lazy"
+				marginheight="0"
+				marginwidth="0"
+				allowtransparency="true"
+			>
+				Loading...
+			</iframe>
+		</div>
+	</section>
+</PageLayout>

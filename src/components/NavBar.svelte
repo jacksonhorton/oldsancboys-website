@@ -35,5 +35,6 @@
         <NavLi href="/">Home</NavLi>
         <!-- <NavLi href="/music">Music</NavLi> -->
         <NavLi href="/contact">Contact</NavLi>
+        <NavLi href="/shirts">Shirts</NavLi>
     </NavUl>
 </Navbar>
