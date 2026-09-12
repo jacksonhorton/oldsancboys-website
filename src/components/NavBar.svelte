@@ -20,10 +20,10 @@
 
 <Navbar class="">
     <NavBrand href="/">
-        <img src={imageUrl.src} loading="lazy" class="me-3 h-14 w-17 px-2" alt="Old Sanc Boys Logo" />
+        <!-- <img src={imageUrl.src} loading="lazy" class="me-3 h-14 w-17 px-2" alt="Old Sanc Boys Logo" /> -->
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-            <Heading tag="h1" class="font-sans md:flex hidden items-center" size="text-sm">
-                Old Sanc Boys
+            <Heading tag="h1" class="font-sans md:flex hidden items-center osb-text" size="text-sm">
+                oldsancboys
                 {#if pageTitle != ""}
                     <Badge color={badgeColor} class="text-2xl font-semibold ms-2">{pageTitle}</Badge>
                 {/if}
@@ -38,3 +38,11 @@
         <NavLi href="/shirts">Shirts</NavLi>
     </NavUl>
 </Navbar>
+<style>
+:global(.osb-text) {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: 0;
+}
+</style>
