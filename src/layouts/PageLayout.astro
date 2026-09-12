@@ -2,6 +2,8 @@
 export interface Props {
   title: string;
   description?: string;
+  hideMobileTitle?: boolean;
+  bodyClass?: string;
 }
 
 import BaseHead from "../components/BaseHead.astro";
@@ -11,7 +13,12 @@ import ParallaxBackground from "../components/ParallaxBackground.svelte";
 
 import { Heading, Badge } from "flowbite-svelte";
 
-const { title, description = "Old Sanc Boys" } = Astro.props;
+const {
+  title,
+  description = "Old Sanc Boys",
+  hideMobileTitle = false,
+  bodyClass = "",
+} = Astro.props;
 const activeUrl = Astro.url.pathname;
 
 import { getImage } from "astro:assets";
@@ -31,7 +38,7 @@ const optimizedImageSrc = await getImage({
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <BaseHead title={title} description={description} />
   </head>
-  <body class="flex flex-col min-h-screen pt-4">
+  <body class={`flex flex-col min-h-screen pt-4 ${bodyClass}`}>
     <main class="flex-1">
       <ParallaxBackground client:load />
 
@@ -47,7 +54,7 @@ const optimizedImageSrc = await getImage({
       >
       </div>
       {
-        title != "" && (
+        title != "" && !hideMobileTitle && (
           <Heading
             tag="h1"
             class="tracking-wider md:hidden flex items-center justify-center pb-16"

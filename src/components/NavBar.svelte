@@ -22,15 +22,17 @@
     <NavBrand href="/">
         <!-- <img src={imageUrl.src} loading="lazy" class="me-3 h-14 w-17 px-2" alt="Old Sanc Boys Logo" /> -->
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-            <Heading tag="h1" class="font-sans md:flex hidden items-center osb-text" size="text-sm">
-                oldsancboys
+            <Heading tag="h1" class="font-sans flex items-center osb-text">
+                <span class="ml-4 md:text-5xl text-3xl">
+                    oldsancboys
+                </span>
                 {#if pageTitle != ""}
-                    <Badge color={badgeColor} class="text-2xl font-semibold ms-2">{pageTitle}</Badge>
+                    <Badge color={badgeColor} class="md:text-2xl text-lg font-semibold ms-2">{pageTitle}</Badge>
                 {/if}
             </Heading>
         </span>
     </NavBrand>
-    <NavHamburger  />
+    <NavHamburger  class="mr-4"/>
     <NavUl {activeUrl} {activeClass} {nonActiveClass} slideParams={menuSlideParams}>
         <NavLi href="/">Home</NavLi>
         <!-- <NavLi href="/music">Music</NavLi> -->
@@ -41,8 +43,16 @@
 <style>
 :global(.osb-text) {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
     font-style: italic;
     font-weight: 900;
+    line-height: 1;
     letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+    :global(.osb-text) {
+        font-size: 2rem;
+    }
 }
 </style>
